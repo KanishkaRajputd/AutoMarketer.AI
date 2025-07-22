@@ -3,10 +3,6 @@ import streamlit as st
 import chromadb
 from chromadb.config import Settings
 import os
-# Setup SQLite3 compatibility for Streamlit Cloud deployment
-from utils.db_compatibility import setup_sqlite3_compatibility
-setup_sqlite3_compatibility()
-
 
 
 def clear_chroma_db(collection_name=None):
