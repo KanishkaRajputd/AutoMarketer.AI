@@ -1,4 +1,12 @@
 import streamlit as st
+
+# CRITICAL: Setup SQLite3 compatibility BEFORE any other imports that might use chromadb
+try:
+    from utils.db_compatibility import setup_sqlite3_compatibility
+    setup_sqlite3_compatibility()
+except ImportError:
+    pass
+
 from interfaces.agents_interface import show_agents_interface
 from interfaces.home_interface import show_home_interface
 
