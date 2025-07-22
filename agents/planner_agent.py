@@ -34,7 +34,6 @@ def planner_agent(user_input):
             {"role": "user", "content": prompt}
         ]
     )
-    return response.choices[0].message.content
 
     st.text('rethinking...')
     

@@ -18,9 +18,6 @@ def handle_file_upload(uploaded_file):
         # Extract information from the document dictionary
         collection_name = sanitize_collection_name(uploaded_file['name'])
         content = uploaded_file['content']
-
-        print(f"Collection name: {collection_name}")
-        print(f"Content: {content}")
         
         # Check if content is valid
         if not content or content.startswith("Error") or content == "No text content found in PDF":

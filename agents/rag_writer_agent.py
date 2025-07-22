@@ -21,7 +21,6 @@ def handle_rag_writer_agent(user_input, uploaded_files, n_results=2):
     """
     try:
         query_embedding = get_embeddings(user_input)
-        print(query_embedding, 'query_embedding', uploaded_files[0]['name'], len(uploaded_files))
         all_documents = []
         for index in uploaded_files:
             collection_name = sanitize_collection_name(index['name'])
@@ -115,10 +114,8 @@ def handle_rag_writer_agent_without_files(user_input):
 def rag_writer_agent(user_input, uploaded_files):
     response = None
     if uploaded_files:
-        print(uploaded_files, 'uploaded_files9887788787')
         response = handle_rag_writer_agent(user_input, uploaded_files)
     else:
-        print(user_input, 'user_inputo9834384832')
         response = handle_rag_writer_agent_without_files(user_input)
 
     return response or None
